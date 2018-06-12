@@ -68,3 +68,15 @@ endmacro (do_test)
 # do a bunch of result based tests
 do_test (36 "36 is 6")
 do_test (-25 "-25 is 0")
+
+# build a CPack driven installer package
+include (InstallRequiredSystemLibraries)
+set (CPACK_RESOURCE_FILE_LICENSE  
+     "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+include (CPack)
+# The next step is to build the project in the usual manner and then run CPack on it. To build a binary distribution you would run:
+# cpack --config CPackConfig.cmake
+# To create a source distribution you would type
+# cpack --config CPackSourceConfig.cmake
