@@ -6,7 +6,8 @@ project (Tutorial)
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
-include (CheckFunctionExists)
+#include (CheckFunctionExists)
+include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
 check_function_exists (log HAVE_LOG)
 check_function_exists (exp HAVE_EXP)
 
