@@ -29,3 +29,9 @@ endif (USE_MYMATH)
 
 add_executable(Tutorial src/main.cpp)
 target_link_libraries (Tutorial ${EXTRA_LIBS})
+
+# add the install targets
+# cmake -DCMAKE_INSTALL_PREFIX=/usr/local/Tutorial ..
+install (TARGETS Tutorial DESTINATION bin)
+install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
+         DESTINATION include)
